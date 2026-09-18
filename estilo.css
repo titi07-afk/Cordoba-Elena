@@ -1,0 +1,22 @@
+h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.contenedor {
+    width: 80%;
+    margin: 10%;
+    border-radius: 3cap;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #979797;
+    background-color: #f9f9f9;
+}
