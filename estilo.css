@@ -87,6 +87,7 @@ h1.cartel::after {
     color: #d6e9f7;
 }
 
+
 main {
     display: grid;
     gap: 1.75rem;
@@ -210,6 +211,7 @@ footer p {
     font-size: 0.92rem;
     color: #d6e9f7;
 }
+
 
 @media (max-width: 600px) {
     body {
