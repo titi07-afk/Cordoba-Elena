@@ -1,5 +1,6 @@
 
 :root {
+    color-scheme: only light;
     --cielo: #a9d6f3;
     --cielo-claro: #e9f5fd;
     --celeste: #4f9bd0;
@@ -150,7 +151,6 @@ p {
 p:last-child {
     margin-bottom: 0;
 }
-
 
 .datos {
     display: grid;
