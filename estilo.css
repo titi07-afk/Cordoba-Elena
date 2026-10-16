@@ -1,40 +1,244 @@
+/* ---------- Variables ---------- */
+:root {
+    --campo: #123524;        /* verde oscuro de fondo */
+    --campo-medio: #1f6b3a;  /* verde de acentos */
+    --trigo: #e0b33c;        /* dorado de las espigas */
+    --papel: #f3f7ef;        /* fondo de las tarjetas */
+    --tinta: #1d2a21;        /* texto principal */
+    --tinta-suave: #4a5a4f;  /* texto secundario */
+    --cartel: #ffffff;       /* cartel de estación */
+
+    --fuente-titulos: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+    --fuente-texto: "Barlow", Arial, sans-serif;
+
+    --ancho: 960px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    background-color: #1ea346;
+    margin: 0;
+    font-family: var(--fuente-texto);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--tinta);
+    background-color: var(--campo);
 }
-h1 {
-    color: #333;
-    font-size: 3em;
-    margin-left: 20px;
+
+/* ---------- Portada ---------- */
+.portada {
+    position: relative;
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 1.25rem 1rem 0;
 }
-img {
-    max-width: 60%;
-    height: auto;
-    border-radius: 1px;
-    border: 3px solid #272727;
-}
-h2 {
-    color: #333;
-    font-size: 2em;
-}
-p {
-    color: #555;
-    font-size: 1em;
-    line-height: 1.5;
-}
-.contenedor {
-    width: 80%;
-    border-radius: 2cap;
-    background-color: #a7ffa4;
-    margin-bottom: 20px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 3px solid #014e1b;
-}
+
 .img {
+    margin: 0;
     display: flex;
-    margin-bottom: 20px;
     flex-direction: column;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: clamp(220px, 45vw, 440px);
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+    border: 3px solid var(--trigo);
+    border-bottom: 0;
+}
+
+.img p {
+    margin: 0;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.875rem;
+    color: var(--tinta-suave);
+    background: var(--papel);
+    border: 3px solid var(--trigo);
+    border-top: 0;
+    border-radius: 0 0 6px 6px;
+}
+
+/* Título en forma de cartel de estación de tren */
+h1.cartel {
+    position: absolute;
+    left: 50%;
+    top: clamp(130px, 32vw, 310px);
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0.2em 0.9em 0.3em;
+    width: max-content;
+    max-width: calc(100% - 2rem);
+    text-align: center;
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: clamp(2rem, 7vw, 4.25rem);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    color: #111;
+    background: var(--cartel);
+    border: 4px solid #111;
+    border-radius: 4px;
+    outline: 4px solid var(--cartel);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Contenido ---------- */
+main {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 1.5rem 1rem 1rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contenedor {
+    background-color: var(--papel);
+    border-radius: 6px;
+    border-left: 8px solid var(--trigo);
+    padding: clamp(1.1rem, 3vw, 2rem);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+    margin: 0 0 1.25rem;
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+    line-height: 1.15;
+    color: var(--campo);
+}
+
+/* Línea de vías bajo cada título */
+h2::after {
+    content: "";
+    display: block;
+    height: 6px;
+    margin-top: 0.5rem;
+    background:
+        repeating-linear-gradient(90deg, var(--campo-medio) 0 10px, transparent 10px 20px) bottom / 100% 3px no-repeat,
+        linear-gradient(var(--campo-medio), var(--campo-medio)) top / 100% 2px no-repeat;
+    opacity: 0.7;
+}
+
+p {
+    margin: 0 0 1em;
+    max-width: 70ch;
+    color: var(--tinta-suave);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- Datos principales ---------- */
+.datos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+    margin: 0;
+}
+
+.datos div {
+    padding: 0.7rem 0.9rem;
+    background: #fff;
+    border: 1px solid #d3e0cf;
+    border-radius: 4px;
+}
+
+.datos dt {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--campo-medio);
+}
+
+.datos dd {
+    margin: 0.15rem 0 0;
+    color: var(--tinta);
+    line-height: 1.4;
+}
+
+/* ---------- Lugares ---------- */
+.lugares {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.lugares li {
+    position: relative;
+    padding-left: 1.6rem;
+    color: var(--tinta-suave);
+}
+
+.lugares li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.8rem;
+    height: 0.8rem;
+    background: var(--trigo);
+    border: 2px solid var(--campo);
+    border-radius: 50%;
+}
+
+.lugares strong {
+    display: block;
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--tinta);
+}
+
+/* ---------- Pie ---------- */
+footer {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 1.5rem 1rem 2rem;
+    text-align: center;
+}
+
+footer p {
+    max-width: none;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #b9d3c0;
+}
+
+/* ---------- Pantallas chicas ---------- */
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .portada,
+    main,
+    footer {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .contenedor {
+        border-left-width: 6px;
+    }
+
+    h1.cartel {
+        border-width: 3px;
+        outline-width: 3px;
+    }
 }
