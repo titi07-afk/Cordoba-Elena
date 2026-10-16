@@ -45,6 +45,8 @@ body {
 }
 
 h1.cartel {
+    position: static;
+    transform: none;
     margin: 0 0 1.75rem;
     font-family: var(--fuente-titulos);
     font-weight: 700;
@@ -130,7 +132,6 @@ p {
 p:last-child {
     margin-bottom: 0;
 }
-
 
 .datos {
     display: grid;
