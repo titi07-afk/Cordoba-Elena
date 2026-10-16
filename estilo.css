@@ -1,12 +1,12 @@
-/* ---------- Variables ---------- */
+
 :root {
-    --campo: #123524;        /* verde oscuro de fondo */
-    --campo-medio: #1f6b3a;  /* verde de acentos */
-    --trigo: #e0b33c;        /* dorado de las espigas */
-    --papel: #f3f7ef;        /* fondo de las tarjetas */
-    --tinta: #1d2a21;        /* texto principal */
-    --tinta-suave: #4a5a4f;  /* texto secundario */
-    --cartel: #ffffff;       /* cartel de estación */
+    --campo: #123524;        
+    --campo-medio: #1f6b3a;  
+    --trigo: #e0b33c;        
+    --papel: #f3f7ef;        
+    --tinta: #1d2a21;        
+    --tinta-suave: #4a5a4f;  
+    --cartel: #ffffff;       
 
     --fuente-titulos: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
     --fuente-texto: "Barlow", Arial, sans-serif;
@@ -14,7 +14,7 @@
     --ancho: 960px;
 }
 
-/* ---------- Base ---------- */
+
 *,
 *::before,
 *::after {
@@ -34,7 +34,7 @@ body {
     background-color: var(--campo);
 }
 
-/* ---------- Portada ---------- */
+
 .portada {
     position: relative;
     max-width: var(--ancho);
@@ -70,7 +70,7 @@ img {
     border-radius: 0 0 6px 6px;
 }
 
-/* Título en forma de cartel de estación de tren */
+
 h1.cartel {
     position: absolute;
     left: 50%;
@@ -94,7 +94,6 @@ h1.cartel {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* ---------- Contenido ---------- */
 main {
     max-width: var(--ancho);
     margin: 0 auto;
@@ -120,7 +119,7 @@ h2 {
     color: var(--campo);
 }
 
-/* Línea de vías bajo cada título */
+
 h2::after {
     content: "";
     display: block;
@@ -142,7 +141,7 @@ p:last-child {
     margin-bottom: 0;
 }
 
-/* ---------- Datos principales ---------- */
+
 .datos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -170,7 +169,7 @@ p:last-child {
     line-height: 1.4;
 }
 
-/* ---------- Lugares ---------- */
+
 .lugares {
     list-style: none;
     margin: 0;
@@ -205,7 +204,7 @@ p:last-child {
     color: var(--tinta);
 }
 
-/* ---------- Pie ---------- */
+
 footer {
     max-width: var(--ancho);
     margin: 0 auto;
@@ -220,7 +219,7 @@ footer p {
     color: #b9d3c0;
 }
 
-/* ---------- Pantallas chicas ---------- */
+
 @media (max-width: 600px) {
     body {
         font-size: 1rem;
