@@ -35,7 +35,6 @@ body {
     background: var(--celeste-claro);
 }
 
-
 .portada {
     display: flex;
     flex-direction: column;
@@ -45,8 +44,6 @@ body {
 }
 
 h1.cartel {
-    position: static;
-    transform: none;
     margin: 0 0 1.75rem;
     font-family: var(--fuente-titulos);
     font-weight: 700;
@@ -88,7 +85,6 @@ h1.cartel::after {
     font-size: 0.9rem;
     color: #d6e9f7;
 }
-
 
 main {
     display: grid;
@@ -212,7 +208,6 @@ footer p {
     font-size: 0.92rem;
     color: #d6e9f7;
 }
-
 
 @media (max-width: 600px) {
     body {
